@@ -8,7 +8,7 @@ on:
 
 env:
   tf_target_dir: example/examplea
-  branch: main
+  branch: master
 jobs:
   tfsec:
     runs-on: ubuntu-latest
