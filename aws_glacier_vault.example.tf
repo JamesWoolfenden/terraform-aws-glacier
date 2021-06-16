@@ -1,0 +1,36 @@
+
+resource "aws_glacier_vault" "example" {
+  name = var.vault_name
+
+  notification {
+    sns_topic = aws_sns_topic.example.arn
+    events    = ["ArchiveRetrievalCompleted", "InventoryRetrievalCompleted"]
+  }
+
+  access_policy = <<EOF
+{
+    "Version":"2012-10-17",
+    "Statement":[
+       {
+          "Sid": "add-read-only-perm",
+          "Principal": "*",
+          "Effect": "Allow",
+          "Action": [
+             "glacier:InitiateJob",
+             "glacier:GetJobOutput"
+          ],
+          "Resource": "arn:aws:glacier:${local.region}:${local.account_id}:vaults/${var.vault_name}"
+       }
+    ]
+}
+EOF
+}
+
+locals {
+  region     = data.aws_region.current.name
+  account_id = data.aws_caller_identity.current.account_id
+}
+
+data "aws_region" "current" {}
+
+data "aws_caller_identity" "current" {}
