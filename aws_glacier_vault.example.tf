@@ -1,5 +1,6 @@
 
 resource "aws_glacier_vault" "example" {
+  #checkov:skip= CKV_AWS_167:TODO
   name = var.vault_name
 
   notification {
