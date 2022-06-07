@@ -26,7 +26,8 @@ resource "aws_glacier_vault" "example" {
 }
 EOF
   tags = {
-    key = ""
+    key   = ""
+    team2 = "name"
   }
 }
 
