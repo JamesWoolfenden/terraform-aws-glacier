@@ -99,6 +99,34 @@ resource "aws_iam_policy" "terraform_pike" {
                 "SNS:UnTagResource"
             ],
             "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeAccountAttributes"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "glacier:AbortVaultLock",
+                "glacier:AddTagsToVault",
+                "glacier:CompleteVaultLock",
+                "glacier:CreateVault",
+                "glacier:DeleteVault",
+                "glacier:DescribeVault",
+                "glacier:GetVaultAccessPolicy",
+                "glacier:GetVaultLock",
+                "glacier:InitiateVaultLock",
+                "glacier:ListTagsForVault",
+                "glacier:RemoveTagsFromVault",
+                "glacier:SetVaultAccessPolicy",
+                "glacier:SetVaultNotifications"
+            ],
+            "Resource": "*"
         }
     ]
 })
@@ -128,7 +156,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright � 2019-2022 James Woolfenden
+Copyright © 2019-2022 James Woolfenden
 
 ## License
 
