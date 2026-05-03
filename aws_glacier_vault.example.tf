@@ -1,4 +1,3 @@
-
 resource "aws_glacier_vault" "example" {
   #checkov:skip= CKV_AWS_167:TODO
   name = var.vault_name
@@ -29,12 +28,9 @@ EOF
     key = ""
   }
 }
-
 locals {
   region     = data.aws_region.current.name
   account_id = data.aws_caller_identity.current.account_id
 }
-
 data "aws_region" "current" {}
-
 data "aws_caller_identity" "current" {}

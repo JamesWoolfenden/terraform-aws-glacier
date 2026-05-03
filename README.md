@@ -90,26 +90,14 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "SNS:CreateTopic",
-                "SNS:DeleteTopic",
-                "SNS:GetTopicAttributes",
-                "SNS:ListTagsForResource",
-                "SNS:SetTopicAttributes",
-                "SNS:TagResource",
-                "SNS:UnTagResource"
+                "ec2:DescribeAccountAttributes"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
             "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeAccountAttributes"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": [
                 "glacier:AbortVaultLock",
@@ -126,7 +114,25 @@ resource "aws_iam_policy" "terraform_pike" {
                 "glacier:SetVaultAccessPolicy",
                 "glacier:SetVaultNotifications"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:GetTopicAttributes",
+                "sns:ListTagsForResource",
+                "sns:SetTopicAttributes",
+                "sns:TagResource",
+                "sns:UnTagResource"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })
@@ -156,7 +162,7 @@ Please use the [issue tracker](https://github.com/jameswoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2022 James Woolfenden
+Copyright © 2019-2026 James Woolfenden
 
 ## License
 

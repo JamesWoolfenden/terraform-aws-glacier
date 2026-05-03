@@ -12,7 +12,6 @@ data "aws_iam_policy_document" "example" {
     }
   }
 }
-
 resource "aws_glacier_vault_lock" "example" {
   complete_lock         = var.complete_lock
   policy                = data.aws_iam_policy_document.example.json
