@@ -34,7 +34,7 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
@@ -44,7 +44,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_glacier_vault.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/glacier_vault) | resource |
 | [aws_glacier_vault_lock.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/glacier_vault_lock) | resource |
 | [aws_sns_topic.example](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
@@ -55,7 +55,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_complete_lock"></a> [complete\_lock](#input\_complete\_lock) | Set to true for an immutable permanent lock | `bool` | `false` | no |
 | <a name="input_ignore_deletion_error"></a> [ignore\_deletion\_error](#input\_ignore\_deletion\_error) | Allow Terraform to ignore the error returned when attempting to delete the Glacier Lock Policy. This can be used to delete or recreate the Glacier Vault via Terraform, for example, if the Glacier Vault Lock policy permits that action. This should only be used in conjunction with complete\_lock being set to true | `bool` | `false` | no |
 | <a name="input_sns_topic_name"></a> [sns\_topic\_name](#input\_sns\_topic\_name) | n/a | `string` | `"glacier-sns-topic-"` | no |
@@ -64,7 +64,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_lock"></a> [lock](#output\_lock) | n/a |
 | <a name="output_topic"></a> [topic](#output\_topic) | n/a |
 | <a name="output_vault"></a> [vault](#output\_vault) | n/a |
